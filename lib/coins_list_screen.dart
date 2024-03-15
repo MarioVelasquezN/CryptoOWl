@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 class CoinsListScreen extends StatefulWidget {
   @override
   State<CoinsListScreen> createState() => _CoinsListScreenState();
@@ -23,11 +22,8 @@ class _CoinsListScreenState extends State<CoinsListScreen> {
     return ListView.builder(
       itemCount: _coins.length,
       itemBuilder: (context, index) {
-        return Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: CoinListItem(
-            coinName: _coins[index],
-          ),
+        return CoinListItem(
+          coinName: _coins[index],
         );
       },
     );
@@ -35,38 +31,48 @@ class _CoinsListScreenState extends State<CoinsListScreen> {
 }
 
 class CoinListItem extends StatelessWidget {
-  //statelesswidget por que no necesita guardar ningun estado
   final String coinName;
+  final bool up = false;
   const CoinListItem({Key? key, required this.coinName}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        SizedBox(
-          width: 30,
-          child: Image.network(
-              "https://cryptologos.cc/logos/bitcoin-btc-logo.png"),
+    return Card(
+      elevation: 4,
+      child: DefaultTextStyle(
+        style: const TextStyle(fontSize: 20, color: Colors.black87),
+        child: Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Row(
+            children: [
+              SizedBox(
+                width: 35,
+                child: Image.network(
+                    "https://cryptologos.cc/logos/yooshi-yooshi-logo.png"),
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    coinName,
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  Text("BTC"),
+                ],
+              ),
+              const Spacer(),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Text("\$20.000"),
+                  Text("-5%", 
+                  style: TextStyle(color:up?Colors.green:Colors.red, fontSize: 18)),
+                ],
+              )
+            ],
+          ),
         ),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              coinName,
-              style: TextStyle(fontSize: 20),
-            ),
-            Text("BTC"),
-          ],
-        ),
-        const Spacer(),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            Text("\$1000"),
-            Text("5%"),
-          ],
-        )
-      ],
+      ),
     );
   }
 }

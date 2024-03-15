@@ -1,5 +1,7 @@
 {
     "cSpell.words": [
         "Coinslist"
-    ]
+    ],
+    "cmake.sourceDirectory": "C:/Users/rolan/OneDrive/Documents/Trabajo/proyecto/CryptoOWl/windows",
+    "cmake.configureOnOpen": true
 }
