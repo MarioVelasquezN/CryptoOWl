@@ -1,7 +1,8 @@
 {
-    "cSpell.words": [
-        "Coinslist"
-    ],
-    "cmake.sourceDirectory": "C:/Users/rolan/OneDrive/Documents/Trabajo/proyecto/CryptoOWl/windows",
-    "cmake.configureOnOpen": true
+  "cSpell.words": [
+    "Coinslist"
+  ],
+  "cmake.sourceDirectory": "C:/Users/rolan/OneDrive/Documents/Trabajo/proyecto/CryptoOWl/windows",
+  "cmake.configureOnOpen": true,
+  "dart.flutterSdkPath": ".fvm\\versions\\3.19.5"
 }
